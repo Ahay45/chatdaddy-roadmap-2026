@@ -116,6 +116,8 @@
     .tag-ai { background: #3d2a1f; color: #ffa657; }
     .tag-growth { background: #3d1f3d; color: #d2a8ff; }
     .tag-dx { background: #1f2d3d; color: #79c0ff; }
+    .tag-plg { background: #2d1f3d; color: #f778ba; }
+    .tag-onboarding { background: #1f3a30; color: #39d353; }
 
     .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
     .card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
@@ -202,6 +204,8 @@
     <div class="legend-item"><div class="dot" style="background:#56d364"></div> Product</div>
     <div class="legend-item"><div class="dot" style="background:#79b8ff"></div> Infra</div>
     <div class="legend-item"><div class="dot" style="background:#d2a8ff"></div> Growth</div>
+    <div class="legend-item"><div class="dot" style="background:#f778ba"></div> PLG</div>
+    <div class="legend-item"><div class="dot" style="background:#39d353"></div> Onboarding</div>
   </div>
 </header>
 
@@ -210,11 +214,257 @@
   <!-- Summary Strip -->
   <div class="summary-strip" style="margin-top:40px;">
     <div class="summary-card"><div class="num">4</div><div class="label">Quarters</div></div>
-    <div class="summary-card"><div class="num">24</div><div class="label">Milestones</div></div>
-    <div class="summary-card"><div class="num">6</div><div class="label">Major Releases</div></div>
+    <div class="summary-card"><div class="num">32</div><div class="label">Milestones</div></div>
+    <div class="summary-card"><div class="num">8</div><div class="label">Major Releases</div></div>
     <div class="summary-card"><div class="num">3</div><div class="label">AI Features</div></div>
     <div class="summary-card"><div class="num">∞</div><div class="label">Ambition</div></div>
   </div>
+
+  <!-- PLG Section -->
+  <div style="margin-bottom:48px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <span style="font-size:1.5rem;">🚀</span>
+      <h2 style="font-size:1.5rem;font-weight:700;">Product-Led Growth</h2>
+      <span style="font-size:0.85rem;color:var(--muted);margin-left:4px;">— The product itself drives acquisition, activation & expansion</span>
+    </div>
+    <p style="color:var(--muted);font-size:0.9rem;max-width:720px;line-height:1.7;margin-bottom:24px;">
+      PLG flips the funnel. Instead of sales pushing users to the product, the product pulls them in, shows value before a credit card appears, and turns power users into advocates. Every feature below is a growth lever baked into the UX itself.
+    </p>
+    <div class="cards">
+
+      <div class="card">
+        <span class="card-tag tag-plg">PLG</span>
+        <h3>Freemium "Taste of Power" Tier</h3>
+        <p>Let any team send up to 500 messages/month free — no credit card. The moment they hit the limit they're already hooked.</p>
+        <ul>
+          <li>Usage meter visible in header (creates urgency)</li>
+          <li>Smart upgrade prompt at 80% usage, not 100%</li>
+          <li>One-click upgrade preserves all data &amp; flows</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-plg">PLG</span>
+        <h3>Viral Invite Loop</h3>
+        <p>Every message sent via ChatDaddy carries a subtle "Powered by ChatDaddy" badge for free-tier users — clickable, leading to a pre-filled signup.</p>
+        <ul>
+          <li>Badge opt-out unlocked at paid tier (upgrade incentive)</li>
+          <li>Referral credit: invite a team → get 1 month free</li>
+          <li>Referral dashboard showing earnings &amp; clicks</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-plg">PLG</span>
+        <h3>In-app "Aha Moment" Funnel</h3>
+        <p>Data shows the aha moment is sending a first automated reply. Track time-to-first-automation and optimise every step before it.</p>
+        <ul>
+          <li>Funnel: signup → connect channel → first flow → first reply</li>
+          <li>Drop-off heatmap per step (Amplitude)</li>
+          <li>Automated nudge email + in-app toast at each stuck step</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q1 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-plg">PLG</span>
+        <h3>Template Marketplace (Virality)</h3>
+        <p>Users publish their best flows as public templates. Others install with one click — every install credits the creator and promotes ChatDaddy.</p>
+        <ul>
+          <li>"Built with ChatDaddy" share card for social</li>
+          <li>Top templates featured on landing page (SEO)</li>
+          <li>Creator badges + profile page</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q4 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-plg">PLG</span>
+        <h3>Usage-Triggered Expansion Revenue</h3>
+        <p>Identify power users automatically and surface upgrade offers contextually — inside the feature they love most, right when they hit a limit.</p>
+        <ul>
+          <li>AI model scores each team's expansion readiness</li>
+          <li>Personalised upgrade CTA (e.g. "You sent 480 messages this week — upgrade to unlimited")</li>
+          <li>CSM alert for high-score teams</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q3 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-plg">PLG</span>
+        <h3>Public ROI Calculator</h3>
+        <p>Embeddable calculator on marketing site: "How many hours does your team spend on manual WhatsApp replies?" → shows $ saved with ChatDaddy.</p>
+        <ul>
+          <li>Inputs: team size, avg reply time, messages/day</li>
+          <li>Output: time saved + cost saved per month</li>
+          <li>CTA: "Start saving now" → pre-filled signup</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Onboarding UX Section -->
+  <div style="margin-bottom:48px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <span style="font-size:1.5rem;">🎯</span>
+      <h2 style="font-size:1.5rem;font-weight:700;">UIUX Onboarding Experience</h2>
+      <span style="font-size:0.85rem;color:var(--muted);margin-left:4px;">— Signup-level &amp; feature-level</span>
+    </div>
+    <p style="color:var(--muted);font-size:0.9rem;max-width:720px;line-height:1.7;margin-bottom:24px;">
+      Bad onboarding is the #1 reason users churn before they ever experience value. We fix it at two levels: <strong style="color:var(--text)">Signup-level</strong> (first 5 minutes) and <strong style="color:var(--text)">Feature-level</strong> (every time a user touches something new).
+    </p>
+
+    <h3 style="font-size:1rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px;">① Signup-Level Onboarding</h3>
+    <div class="cards" style="margin-bottom:32px;">
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Zero-Friction Signup Flow</h3>
+        <p>Reduce signup form to email + password only. Everything else is collected progressively after the user is inside.</p>
+        <ul>
+          <li>Google / WhatsApp OAuth as primary CTA</li>
+          <li>No credit card on free tier</li>
+          <li>Auto-create a demo workspace so they land in a live product</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q1 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Role-Based Welcome Path</h3>
+        <p>"What best describes you?" — 3 cards (Business Owner / Support Agent / Developer). Each path shows a different first-run experience tailored to their goal.</p>
+        <ul>
+          <li>Business Owner → Revenue &amp; automation focus</li>
+          <li>Support Agent → Inbox &amp; team tools focus</li>
+          <li>Developer → API &amp; FlowBuilder focus</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q1 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Interactive Setup Checklist</h3>
+        <p>Sticky sidebar checklist that tracks activation milestones. Gamified with progress ring and confetti on completion.</p>
+        <ul>
+          <li>Connect WhatsApp channel</li>
+          <li>Invite first teammate</li>
+          <li>Send first message or automation</li>
+          <li>Dismiss only when all 5 steps done</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q1 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Guided Channel Connection Wizard</h3>
+        <p>Replace the current broken WABA OAuth flow with a step-by-step modal with live status indicators and clear error recovery.</p>
+        <ul>
+          <li>Step indicators: Auth → Verify → Connect → Done</li>
+          <li>Inline error messages (no "Oops!" page)</li>
+          <li>Video thumbnail for each step</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q1 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Day-1 Drip Nudges</h3>
+        <p>Automated in-app + email nudges triggered by what the user has NOT done yet — not generic blasts.</p>
+        <ul>
+          <li>2h after signup if no channel connected → "Need help connecting?"</li>
+          <li>24h if no message sent → short video tutorial</li>
+          <li>72h if no teammate invited → "Better together" prompt</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+    </div>
+
+    <h3 style="font-size:1rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px;">② Feature-Level Onboarding</h3>
+    <div class="cards">
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Contextual Spotlight Tooltips</h3>
+        <p>First time a user visits FlowBuilder, CRM, Campaigns — a spotlight highlights the key action with a single sentence. Dismissed in one click.</p>
+        <ul>
+          <li>Shown only once per feature per user (persisted)</li>
+          <li>Skip all option for power users</li>
+          <li>Tooltip copy written at reading level 8 (no jargon)</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Empty State Design System</h3>
+        <p>Every empty state (no chats, no flows, no campaigns) tells the user exactly what to do next — with an illustration and a primary CTA.</p>
+        <ul>
+          <li>Replace all blank white screens</li>
+          <li>CTA directly creates the first item (not a link to docs)</li>
+          <li>Consistent illustration style across all features</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q1 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Interactive Product Tours</h3>
+        <p>Optional "Take a tour" button on complex features (FlowBuilder, CRM, Analytics). Walks through 4–5 steps with real UI interaction.</p>
+        <ul>
+          <li>Tours built with Shepherd.js (lightweight, no third-party)</li>
+          <li>Resumable — user can pause and continue later</li>
+          <li>Completion tracked in Amplitude for ROI measurement</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Starter Templates Per Feature</h3>
+        <p>Every new flow, campaign, or chatbot starts with a "Use a template" option — pre-filled with realistic example content.</p>
+        <ul>
+          <li>5 curated templates per feature category</li>
+          <li>Preview modal before inserting</li>
+          <li>Editable immediately after insert</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q2 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>In-app Help Panel</h3>
+        <p>Slide-out panel (?) icon in every feature — shows 3 contextual help articles, a video, and a "Chat with support" button.</p>
+        <ul>
+          <li>Context-aware: different content per page</li>
+          <li>Searchable knowledge base inline</li>
+          <li>Escalates to live chat if article doesn't resolve</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q3 2026</div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-onboarding">Onboarding</span>
+        <h3>Feature Adoption Scorecards</h3>
+        <p>Internal dashboard (for CSM &amp; product team) showing per-team adoption depth across all features — so we can proactively reach struggling teams.</p>
+        <ul>
+          <li>Score: 0–100 per feature per team</li>
+          <li>Auto-flag teams stuck at &lt;30% after 14 days</li>
+          <li>CSM outreach queue sorted by churn risk</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Q3 2026</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
 
   <!-- Q1 -->
   <div class="quarter q1">
