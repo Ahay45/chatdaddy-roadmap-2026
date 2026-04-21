@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatDaddy — 1-Year Roadmap 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #25D366;
+      --green-dark: #128C7E;
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --q1: #388bfd;
+      --q2: #3fb950;
+      --q3: #d29922;
+      --q4: #f85149;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: var(--green);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+
+    header h1 { font-size: 2.4rem; font-weight: 700; }
+    header h1 span { color: var(--green); }
+    header p { color: var(--muted); margin-top: 8px; font-size: 1.1rem; }
+
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .legend-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: var(--muted);
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+
+    .quarter { margin-bottom: 48px; }
+
+    .quarter-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .q-badge {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 4px 12px; border-radius: 20px; color: #fff;
+    }
+
+    .q1 .q-badge { background: var(--q1); }
+    .q2 .q-badge { background: var(--q2); }
+    .q3 .q-badge { background: var(--q3); }
+    .q4 .q-badge { background: var(--q4); }
+
+    .quarter-header h2 { font-size: 1.3rem; font-weight: 600; }
+    .quarter-header .dates { color: var(--muted); font-size: 0.9rem; margin-left: auto; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover { border-color: var(--green-dark); transform: translateY(-2px); }
+
+    .card-tag {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 6px;
+      margin-bottom: 10px; display: inline-block;
+    }
+
+    .tag-infra { background: #1f3a5f; color: #79b8ff; }
+    .tag-product { background: #1f3d2e; color: #56d364; }
+    .tag-ai { background: #3d2a1f; color: #ffa657; }
+    .tag-growth { background: #3d1f3d; color: #d2a8ff; }
+    .tag-dx { background: #1f2d3d; color: #79c0ff; }
+
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+    .card ul {
+      margin-top: 10px; padding-left: 0;
+      list-style: none;
+    }
+
+    .card ul li {
+      font-size: 0.82rem; color: var(--muted);
+      padding: 3px 0;
+      display: flex; align-items: flex-start; gap: 6px;
+    }
+
+    .card ul li::before { content: "›"; color: var(--green); font-weight: 700; }
+
+    .status {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 12px; font-size: 0.75rem; color: var(--muted);
+    }
+
+    .status .dot { width: 7px; height: 7px; }
+    .dot-planned { background: var(--muted); }
+    .dot-active { background: var(--green); }
+    .dot-done { background: var(--q1); }
+
+    .divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .progress-bar-wrap {
+      background: var(--border);
+      border-radius: 4px;
+      height: 4px;
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .progress-bar { height: 100%; border-radius: 4px; }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .summary-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .summary-card .num { font-size: 2rem; font-weight: 700; color: var(--green); }
+    .summary-card .label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">💬</div>
+    <span style="font-size:1.6rem;font-weight:800;">ChatDaddy</span>
+  </div>
+  <h1>1-Year Product <span>Roadmap</span></h1>
+  <p>April 2026 — March 2027 &nbsp;·&nbsp; Built for scale, reliability &amp; growth</p>
+  <div class="legend">
+    <div class="legend-item"><div class="dot" style="background:var(--muted)"></div> Planned</div>
+    <div class="legend-item"><div class="dot" style="background:var(--green)"></div> In Progress</div>
+    <div class="legend-item"><div class="dot" style="background:var(--q1)"></div> Done</div>
+    <div class="legend-item"><div class="dot" style="background:#ffa657"></div> AI</div>
+    <div class="legend-item"><div class="dot" style="background:#56d364"></div> Product</div>
+    <div class="legend-item"><div class="dot" style="background:#79b8ff"></div> Infra</div>
+    <div class="legend-item"><div class="dot" style="background:#d2a8ff"></div> Growth</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Summary Strip -->
+  <div class="summary-strip" style="margin-top:40px;">
+    <div class="summary-card"><div class="num">4</div><div class="label">Quarters</div></div>
+    <div class="summary-card"><div class="num">24</div><div class="label">Milestones</div></div>
+    <div class="summary-card"><div class="num">6</div><div class="label">Major Releases</div></div>
+    <div class="summary-card"><div class="num">3</div><div class="label">AI Features</div></div>
+    <div class="summary-card"><div class="num">∞</div><div class="label">Ambition</div></div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="quarter q1">
+    <div class="quarter-header">
+      <span class="q-badge">Q1</span>
+      <h2>Stability &amp; Foundation</h2>
+      <span class="dates">Apr – Jun 2026</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <span class="card-tag tag-infra">Infra</span>
+        <h3>Frontend V2 Launch</h3>
+        <p>Ship the ground-up rebuild on Zustand + TanStack Router/Query/Virtual.</p>
+        <ul>
+          <li>All 9 core modules migrated</li>
+          <li>Lazy loading + error boundaries on every route</li>
+          <li>Performance budget enforced (bundle ≤ 500 KB)</li>
+        </ul>
+        <div class="status"><div class="dot dot-active"></div> In Progress</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:55%;background:var(--q1)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-infra">Infra</span>
+        <h3>Error Boundary Hardening</h3>
+        <p>Eliminate the "Oops!" page for all known crash patterns (PR #3415 + follow-ups).</p>
+        <ul>
+          <li>Replace 71 HIGH-severity render throws</li>
+          <li>Wrap 5 third-party dynamic imports</li>
+          <li>Automated audit CI gate (Lark + GitHub Actions)</li>
+        </ul>
+        <div class="status"><div class="dot dot-active"></div> In Progress</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:70%;background:var(--q1)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-product">Product</span>
+        <h3>Inbox 2.0</h3>
+        <p>Redesigned inbox with unified chat view, smart filters, and quick replies.</p>
+        <ul>
+          <li>Virtualized chat list (TanStack Virtual)</li>
+          <li>Pinned chats, labels, assignee filter</li>
+          <li>Bulk actions without race conditions</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:20%;background:var(--q1)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-dx">DX</span>
+        <h3>UIUX Audit Automation</h3>
+        <p>Daily scan of 16 anti-patterns → Lark report + auto-PR for fixable issues.</p>
+        <ul>
+          <li>Baseline: 2,952 findings</li>
+          <li>Target: reduce by 40% in Q1</li>
+          <li>Lark dashboard with trend graph</li>
+        </ul>
+        <div class="status"><div class="dot dot-active"></div> In Progress</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:60%;background:var(--q1)"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Q2 -->
+  <div class="quarter q2">
+    <div class="quarter-header">
+      <span class="q-badge">Q2</span>
+      <h2>AI &amp; Automation Expansion</h2>
+      <span class="dates">Jul – Sep 2026</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <span class="card-tag tag-ai">AI</span>
+        <h3>AI Reply Suggestions</h3>
+        <p>Context-aware reply drafts in Inbox powered by Claude / GPT-4o.</p>
+        <ul>
+          <li>Tone selector (formal / friendly / brief)</li>
+          <li>One-click insert into compose</li>
+          <li>Team-level prompt customisation</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q2)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-ai">AI</span>
+        <h3>AI CRM Insights</h3>
+        <p>Auto-tag leads, predict churn risk, and surface next-best-action for agents.</p>
+        <ul>
+          <li>Lead scoring based on conversation history</li>
+          <li>Churn risk badge on CRM board</li>
+          <li>Recommended follow-up time</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q2)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-product">Product</span>
+        <h3>FlowBuilder V2</h3>
+        <p>Visual automation builder rebuilt with drag-resize nodes and live preview.</p>
+        <ul>
+          <li>Condition branches with AND/OR logic</li>
+          <li>Loop / delay / webhook nodes</li>
+          <li>Flow versioning + rollback</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q2)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-product">Product</span>
+        <h3>Campaigns 2.0</h3>
+        <p>Full campaign manager inside Marketing tab with scheduling, segments &amp; analytics.</p>
+        <ul>
+          <li>Segment builder (filter by tag, CRM stage, last seen)</li>
+          <li>A/B message testing</li>
+          <li>Real-time delivery &amp; open rate dashboard</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q2)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-growth">Growth</span>
+        <h3>Self-serve Onboarding</h3>
+        <p>Frictionless sign-up → first WhatsApp message in under 5 minutes.</p>
+        <ul>
+          <li>Guided channel connection wizard</li>
+          <li>In-app checklist with progress ring</li>
+          <li>Auto-trigger welcome campaign on activation</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q2)"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Q3 -->
+  <div class="quarter q3">
+    <div class="quarter-header">
+      <span class="q-badge">Q3</span>
+      <h2>Scale &amp; Integrations</h2>
+      <span class="dates">Oct – Dec 2026</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <span class="card-tag tag-infra">Infra</span>
+        <h3>Multi-region Deployment</h3>
+        <p>Expand beyond current EKS cluster to SEA + MENA edge nodes for &lt;100ms latency.</p>
+        <ul>
+          <li>Region-aware WebSocket routing</li>
+          <li>Geo-based CDN for static assets</li>
+          <li>Per-region SLA dashboards</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q3)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-product">Product</span>
+        <h3>Native Integrations Hub</h3>
+        <p>One-click connect to Shopify, HubSpot, Salesforce, Zapier, and Google Sheets.</p>
+        <ul>
+          <li>OAuth-based auth for all connectors</li>
+          <li>Field mapping UI</li>
+          <li>Sync log with error replay</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q3)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-ai">AI</span>
+        <h3>AI Chatbot v3</h3>
+        <p>RAG-powered chatbot trained on team's own documents and FAQs.</p>
+        <ul>
+          <li>PDF / URL knowledge base upload</li>
+          <li>Fallback-to-human escalation</li>
+          <li>Per-conversation confidence score</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q3)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-growth">Growth</span>
+        <h3>Partner &amp; Reseller Portal</h3>
+        <p>White-label management console for agency partners managing multiple clients.</p>
+        <ul>
+          <li>Sub-account provisioning</li>
+          <li>Branded login pages</li>
+          <li>Revenue share dashboard</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q3)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-product">Product</span>
+        <h3>Advanced Analytics</h3>
+        <p>Unified dashboard with team performance, channel health &amp; revenue attribution.</p>
+        <ul>
+          <li>Cohort &amp; funnel analysis</li>
+          <li>CSV / PDF export</li>
+          <li>Scheduled email digest</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q3)"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Q4 -->
+  <div class="quarter q4">
+    <div class="quarter-header">
+      <span class="q-badge">Q4</span>
+      <h2>Enterprise &amp; Monetisation</h2>
+      <span class="dates">Jan – Mar 2027</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <span class="card-tag tag-growth">Growth</span>
+        <h3>Enterprise Tier Launch</h3>
+        <p>Dedicated tenancy, SSO (SAML/OIDC), audit logs, and SLA guarantees.</p>
+        <ul>
+          <li>Custom domain &amp; branding</li>
+          <li>Role-based access with custom roles</li>
+          <li>Priority support queue</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q4)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-product">Product</span>
+        <h3>Mobile App (iOS + Android)</h3>
+        <p>Native app for agents to handle inbox, calls, and notifications on the go.</p>
+        <ul>
+          <li>Push notifications for new chats</li>
+          <li>Voice call support via Twilio</li>
+          <li>Offline message queue sync</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q4)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-ai">AI</span>
+        <h3>Predictive Revenue Engine</h3>
+        <p>AI model that predicts upsell opportunities and flags at-risk subscriptions.</p>
+        <ul>
+          <li>Usage-pattern-based scoring</li>
+          <li>Automated upsell nudge in-app</li>
+          <li>Revenue forecast widget on dashboard</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q4)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-infra">Infra</span>
+        <h3>Zero-downtime Deploys</h3>
+        <p>Blue/green deployments with automated rollback on error-rate spike.</p>
+        <ul>
+          <li>Canary traffic splitting (5% → 100%)</li>
+          <li>Automated chunk-hash invalidation</li>
+          <li>Deploy webhook → Lark alert</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q4)"></div></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-growth">Growth</span>
+        <h3>Marketplace &amp; App Store</h3>
+        <p>Third-party developers can publish plugins and templates to ChatDaddy's ecosystem.</p>
+        <ul>
+          <li>Developer SDK &amp; docs</li>
+          <li>One-click install for templates</li>
+          <li>Revenue share model for developers</li>
+        </ul>
+        <div class="status"><div class="dot dot-planned"></div> Planned</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%;background:var(--q4)"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  ChatDaddy &nbsp;·&nbsp; 1-Year Roadmap 2026–2027 &nbsp;·&nbsp; Last updated April 2026
+</footer>
+
+</body>
+</html>
